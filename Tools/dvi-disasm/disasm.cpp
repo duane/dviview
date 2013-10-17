@@ -33,15 +33,23 @@ int main(int argc, char **argv) {
         case Int4:
           printf(" %d", oper.integer);
           break;
-        case String1:
-        case String2:
-        case String3:
-        case String4:
-        case SumString:
+        case BString1:
+        case BString2:
+        case BString3:
+        case BString4:
           printf(" \"");
           for (unsigned stringIndex = 0; stringIndex < oper.string->getSize(); stringIndex++) {
             uint8_t byte = (*oper.string)[stringIndex];
             printf("%02X", byte);
+          }
+          printf("\"");
+          break;
+        case SumString:
+        case String1:
+          printf(" \"");
+          for (unsigned stringIndex = 0; stringIndex < oper.string->getSize(); stringIndex++) {
+            uint8_t chr = (*oper.string)[stringIndex];
+            printf("%c", chr);
           }
           printf("\"");
           break;

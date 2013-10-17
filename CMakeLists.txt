@@ -3,7 +3,7 @@ project (DVIVIEW)
 
 # c config
 set(OPT "-g -O0")
-add_definitions(${OPT} -Wall -Wextra -Werror -Wno-unused-parameter)
+add_definitions(${OPT} -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-function)
 include_directories(Include)
 
 # set up miscellaneous variables

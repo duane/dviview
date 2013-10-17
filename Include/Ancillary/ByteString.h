@@ -31,7 +31,15 @@ class ByteString {
     ~ByteString() {
       free(string);
     }
-    
+  
+    uint8_t *begin() {
+      return string;
+    }
+
+    uint8_t *end() {
+      return string + size;
+    }
+
     uint8_t operator[](size_t index) {
       assert(index < size);
       return string[index];
